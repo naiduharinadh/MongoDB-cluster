@@ -41,9 +41,9 @@ services:
       - "my_overlay1"
 
 volumes:
-  metasrv4DB: {}
-  metasrv5DB: {}
-  metasrv6DB: {}
+  shard1srv3: {}
+  shard1srv2: {}
+  shard1srv1: {}
   
 networks:
   my_overlay1:
