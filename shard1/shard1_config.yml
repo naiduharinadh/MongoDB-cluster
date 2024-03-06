@@ -39,6 +39,12 @@ services:
       - "50003:27017"
     networks:
       - "my_overlay1"
+
+volumes:
+  metasrv4DB: {}
+  metasrv5DB: {}
+  metasrv6DB: {}
+  
 networks:
   my_overlay1:
     driver: overlay
