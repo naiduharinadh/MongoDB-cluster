@@ -40,7 +40,11 @@ services:
     networks:
       - "my_overlay1"
 
-
+volumes:
+  shard2srv6: {}
+  shard2srv5: {}
+  shard2srv4: {}
+  
 networks:
   my_overlay1:
     driver: overlay
