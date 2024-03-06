@@ -40,7 +40,10 @@ services:
       - "40003:27017"
     networks:
       - "my_overlay1"
-
+volumes:
+  metasrv1DB: {}
+  metasrv2DB: {}
+  metasrv3DB: {}
 networks:
   my_overlay1:
     driver: overlay
