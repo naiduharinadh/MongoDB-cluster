@@ -1,15 +1,15 @@
 **note:** run the setup.sh file in the current os.
 
-**setup docker-swarm:**
-      1) ` docker swarm init `   ----> to initialize the swarm and collect the join tokens there,
-      2) run the setup.sh in the swam slave nodes.
-      3) add the slave nodes 3 or more to SPOF(single point of failure) and fault tolerance.
+**setup docker-swarm:** <br/>
+      1) ` docker swarm init `   ----> to initialize the swarm and collect the join tokens there, <br/>
+      2) run the `bash setup.sh` in the swam slave nodes.<br/>
+      3) add the slave nodes 3 or more to SPOF(single point of failure) and fault tolerance.<br/>
       
 **setup mongo-cluster (shard):**
 **step1:**
       configure the os/containers by using the above docker-compose files individually for the shards and **meta**servers.
       launch all the nodes inside the docker service by using:
-      **docker stack deploy --compose-file matasvr/meta_config.yml meta_server_stack**
+       ` **docker stack deploy --compose-file matasvr/meta_config.yml meta_server_stack** ` <br/>
       
 **step2:**
       create the router os which is responsible to connect all the shards and meta servers , launch it by using the mongo_router.yml file by 
