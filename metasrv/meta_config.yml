@@ -9,7 +9,7 @@ services:
       replicas: 1
     command: mongod --configsvr --replSet cfgrs --port 27017 --dbpath /data/db
     volumes:
-      - ./metasrv1DB:/data/db/
+      - metasrv1DB:/data/db
     ports:
       - "40001:27017"
     networks:
@@ -22,7 +22,7 @@ services:
       replicas: 1
     command: mongod --configsvr --replSet cfgrs --port 27017 --dbpath /data/db
     volumes:
-      - ./metasrv2DB:/data/db/
+      - metasrv2DB:/data/db
     ports:
       - "40002:27017"
     networks:
@@ -32,7 +32,7 @@ services:
     container_name: "metaSRV3"
     image: "mongo:latest"
     volumes:
-      - ./metasrv3DB:/data/db/
+      - metasrv3DB:/data/db
     deploy:
       replicas: 1
     command: mongod --configsvr --replSet cfgrs --port 27017 --dbpath /data/db
