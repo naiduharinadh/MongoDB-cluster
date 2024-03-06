@@ -29,3 +29,6 @@
       ` sh.enableSharding("db2024") `<br/>
       ` sh.shardCollection("db2024.collection",{"age":"hashed"}) ` ----> enable which collection has to be split based on the KEY of the document.
       
+**to get the actual power of the docker swarm :** <br/>
+mix all the docker-comppose files inside one file and launch them in the same overlay network to communicate easily between the contaienrs.
+this will gives you the seem less experience, no downtime and no point of failure. 
