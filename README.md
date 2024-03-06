@@ -1,9 +1,9 @@
 **note:** run the setup.sh file in the current os.
 
 **setup docker-swarm:** <br/>
-      1) ` docker swarm init `   ----> to initialize the swarm and collect the join tokens there, <br/>
-      2) run the `bash setup.sh` in the swam slave nodes.<br/>
-      3) add the slave nodes 3 or more to SPOF(single point of failure) and fault tolerance.<br/>
+      > 1) ` docker swarm init `   ----> to initialize the swarm and collect the join tokens there, <br/>
+      > 2) run the `bash setup.sh` in the swam slave nodes.<br/>
+      > 3) add the slave nodes 3 or more to SPOF(single point of failure) and fault tolerance.<br/>
       
 **setup mongo-cluster (shard):**
 **step1:**
