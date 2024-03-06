@@ -33,4 +33,6 @@ services:
       - "50003:27017"
     networks:
       - "my_overlay1"
-
+networks:
+  my_overlay1:
+    driver: overlay

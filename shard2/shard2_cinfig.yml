@@ -22,14 +22,7 @@ services:
       - "50005:27017"
     networks:
       - "my_overlay1"
-  shard2Srv6:
-    container_name: "shard2SRV6"
-    image: "mongo:latest"
-    deploy:
-      replicas:1
-    command: mongod --shardsvr --replSet shard2repset --port 27017 --dbpath /data/db
-    ports:
-      - " 50006:27017"
-    networks:
-      - "my_overlay1"
 
+networks:
+  my_overlay1:
+    driver: driver

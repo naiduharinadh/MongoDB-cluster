@@ -13,3 +13,11 @@ echo -e "[mongodb-org-6.0] \nname=MongoDB Repository \nbaseurl=https://repo.mong
 yum install mongodb-org -y
 systemctl start mongod
 systemctl enable mongod
+
+
+
+echo "      ==============================>   RUN THE FOLLOWING COMMANDS    <==============================="
+echo "    1) docker swarm init ----> to get the tokens \n"
+echo "    2) using tokens join the slave nodes to the master node \n"
+echo "    3) docker  stack deploy --compose-file docker-compose_file_name.yml metasrv1 \n"
+

@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  mongos:
+    container_name: "mongos_router"
+    image: "mongo:latest"
+    command: mongos --configdb cfgrs/3.26.152.148:40001,13.239.3.248:40002,3.26.152.148:40003 --bind_ip 0.0.0.0 --port 27017
+    ports:
+      - "23462:27017"
