@@ -2,31 +2,37 @@ version: '3.8'
 
 services:
 
-  metaSrv1:
+  metasrv1:
     container_name: "metaSRV1"
     image: "mongo:latest"
     deploy:
       replicas: 1
     command: mongod --configsvr --replSet cfgrs --port 27017 --dbpath /data/db
+    volumes:
+      - ./metasrv1DB:/data/db/
     ports:
       - "40001:27017"
     networks:
       - "my_overlay1"
 
-  metaSrv2:
+  metasrv2:
     container_name: "metaSRV2"
     image: "mongo:latest"
     deploy:
       replicas: 1
     command: mongod --configsvr --replSet cfgrs --port 27017 --dbpath /data/db
+    volumes:
+      - ./metasrv2DB:/data/db/
     ports:
       - "40002:27017"
     networks:
       - "my_overlay1"
 
-  metaSrv3:
+  metasrv3:
     container_name: "metaSRV3"
     image: "mongo:latest"
+    volumes:
+      - ./metasrv3DB:/data/db/
     deploy:
       replicas: 1
     command: mongod --configsvr --replSet cfgrs --port 27017 --dbpath /data/db

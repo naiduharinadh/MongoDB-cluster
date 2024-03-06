@@ -1,34 +1,40 @@
 version: "3.8"
 
 services:
-  shard1Srv1:
+  shard1srv1:
     container_name: "shard1SRV1"
     image: "mongo:latest"
     deploy:
       replicas: 1
     command: mongod --shardsvr --replSet shard1repset --port 27017 --dbpath /data/db
+    volumes:
+      - ./shard1srv1:data/db      
     ports:
       - "50001:27017"
     networks:
       - "my_overlay1"
   
-  shard1Srv2:
+  shard1srv2:
     container_name: "shard1SRV2"
     image: "mongo:latest"
     deploy:
       replicas: 1
     command: mongod --shardsvr --replSet shard1repset --port 27017 --dbpath /data/db
+    volumes:
+      - ./shard1srv2:data/db      
     ports:
       - "50002:27017"
     networks:
       - "my_overlay1"
 
-  shard1Srv3:
+  shard1srv3:
     container_name: "shard1SRV3"
     image: "mongo:latest"
     deploy:
       replicas: 1
     command: mongod --shardsvr --replSet shard1repset --port 27017 --dbpath /data/db
+    volumes:
+      - ./shard1srv3:data/db
     ports:
       - "50003:27017"
     networks:
