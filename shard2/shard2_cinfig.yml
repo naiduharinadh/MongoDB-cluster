@@ -8,7 +8,7 @@ services:
       replicas: 1
     command: mongod --shardsvr --replSet shard2repset --port 27017 --dbpath /data/db
     volumes:
-      - ./shard2srv4:data/db      
+      - shard2srv4:/data/db
     ports:
       - "50004:27017"
     networks:
@@ -21,7 +21,7 @@ services:
       replicas: 1
     command: mongod --shardsvr --replSet shard2repset --port 27017 --dbpath /data/db
     volumes:
-      - ./shard2srv5:data/db      
+      - shard2srv5:/data/db
     ports:
       - "50005:27017"
     networks:
@@ -34,7 +34,7 @@ services:
       replicas: 1
     command: mongod --shardsvr --replSet shard2repset --port 27017 --dbpath /data/db
     volumes:
-      - ./shard2srv6:data/db
+      - shard2srv6:/data/db
     ports:
       - "50006:27017"
     networks:
@@ -43,4 +43,4 @@ services:
 
 networks:
   my_overlay1:
-    driver: driver
+    driver: overlay
