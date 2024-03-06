@@ -8,7 +8,7 @@ services:
       replicas: 1
     command: mongod --shardsvr --replSet shard1repset --port 27017 --dbpath /data/db
     volumes:
-      - ./shard1srv1:data/db      
+      - shard1srv1:/data/db
     ports:
       - "50001:27017"
     networks:
@@ -21,7 +21,7 @@ services:
       replicas: 1
     command: mongod --shardsvr --replSet shard1repset --port 27017 --dbpath /data/db
     volumes:
-      - ./shard1srv2:data/db      
+      - shard1srv2:/data/db
     ports:
       - "50002:27017"
     networks:
@@ -34,7 +34,7 @@ services:
       replicas: 1
     command: mongod --shardsvr --replSet shard1repset --port 27017 --dbpath /data/db
     volumes:
-      - ./shard1srv3:data/db
+      - shard1srv3:/data/db
     ports:
       - "50003:27017"
     networks:
