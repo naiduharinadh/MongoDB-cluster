@@ -32,12 +32,16 @@ similarly for the shard2 also, <br />
       as follows: <br/>
       **note:** replace the IP's with the shard nodes IP's.<br/>
       Provide Info to the MetasSRV by following commands: <br />
-      to add shard1: ` sh.addShard("shard1repset/172.13.1.3:50001,172.13.1.4:50002,172.13.1.5:50003") ` <br/>
+      to add shard1:  ### ``` sh.addShard("shard1repset/172.13.1.3:50001,172.13.1.4:50002,172.13.1.5:50003") 
       to add shard2: ` sh.addShard("shard2repset/172.35.2.6:50004,172.35.2.7:50005,172.35.2.8:50006") ` <br/><br/>
+
+    
+ **enable sharding for DB:** 
       
-      **enable sharding for DB:** <br/>
-      ` sh.enableSharding("db2024") `<br/>
-      ` sh.shardCollection("db2024.collection",{"age":"hashed"}) ` ----> enable which collection has to be split based on the KEY of the document.
+      ` sh.enableSharding("db2024") `
+      ` sh.shardCollection("db2024.collection",{"age":"hashed"}) ` 
+      
+      ----> enable which collection has to be split based on the KEY of the document.
       
 **to get the actual power of the docker swarm :** <br/>
 mix all the docker-comppose files inside one file and launch them in the same overlay network to communicate easily between the contaienrs.
